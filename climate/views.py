@@ -136,3 +136,19 @@ class WeatherRecordViewSet(viewsets.ReadOnlyModelViewSet):
 
 # Import para o action stats
 from django.db.models import Count
+# climate/views.py
+
+from django.shortcuts import render
+from rest_framework import viewsets
+from .models import WeatherRecord
+from .serializers import WeatherRecordSerializer
+
+# ... (mantenha seus ViewSets existentes aqui: WeatherViewSet, WeatherStatsView, etc.) ...
+
+def dashboard_view(request):
+    """
+    Renderiza a página principal do dashboard.
+    Não precisa passar dados via contexto aqui, pois o frontend 
+    buscará os dados dinamicamente via JavaScript na API.
+    """
+    return render(request, 'climate/dashboard.html')
