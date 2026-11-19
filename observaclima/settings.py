@@ -107,3 +107,19 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',  # Permite visualização no browser
     ],
 }
+# observaclima/settings.py
+
+# ... (mantenha todo o código existente) ...
+
+# Configuração de arquivos estáticos (CSS, JavaScript, imagens)
+import os
+
+STATIC_URL = '/static/'
+
+# Diretório onde o Django vai procurar arquivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'climate/static'),
+]
+
+# Diretório onde o Django vai coletar todos os arquivos estáticos (para produção)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
